@@ -1,0 +1,83 @@
+
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{a4paper,total={170mm,257mm}, left=10mm, top=10mm}
+\usepackage{color,soul}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{graphicx}
+
+
+\input{datos.tex}
+
+\newcolumntype{C}{m{0.16\linewidth}}
+
+\def\logo{\includegraphics[width=0.2\textwidth]{logo-utec.png}}
+
+\newcommand{\h}[1]{m{#1\textwidth}}
+
+\begin{document}
+
+\begin{table}[!ht]
+    \begin{tabular}{|m{0.2\textwidth}|C|C|C|C|C|} 
+        \hline 
+         \logo               & \multicolumn{5}{l|}{Rubrica de Evaluaci\'on} \\ \hline 
+        \textbf{Competencia} & \multicolumn{5}{p{0.8\linewidth}|}{Formular, Sintetizar e implementar en un protoboard y VHDL funciones l\'ogicas combinatorios}  \\ \hline
+        
+        \textbf{Curso}       & \multicolumn{3}{l|}{Circuitos digitales} & Ciclo & 4 \\ \hline
+        
+        \textbf{Actividad}   &\multicolumn{3}{l|}{ \labname{}} & Semana & 1 \\ \hline
+      
+        \textbf{Nombre y apellido del Alumno} &\multicolumn{3}{c|}{\nombre{}} & Periodo & 2017-2 \\ \hline
+        
+        \textbf{Secci\'on:}  & \sec{}  & Fecha & & Profesor & Oscar Ramos  \\ \hline 
+    
+
+    \end{tabular}
+\end{table}
+
+\textbf{Documentos de evaluaci\'on}
+
+\begin{table}[ht!]
+    \begin{center}
+    \begin{tabular}{|m{0.5\textwidth}|m{0.12\textwidth}|m{0.12\textwidth}|m{0.12\textwidth}|m{0.12\textwidth}|}
+        \hline
+        
+        Criterios de evaluaci\'on & \textbf{Excelente} &\textbf{Bueno}
+        & \textbf{Requiere Mejora} &\textbf{No aceptable} \\ \hline
+        
+        \multicolumn{5}{|l|}{\textbf{TEST DE ENTRADA}} \\ \hline
+        
+        Grado de conocimiento del tema del laboratorio y del procedimiento & \test{} \\ \hline
+        
+        \multicolumn{5}{|l|}{\textbf{SESI\'ON DE LABORATORIO}} \\ \hline
+        
+        Implementa y prueba el circuito l\'ogico AND-OR & \labi{} \\ \hline
+        Implementa y prueba el circuito NAND            & \labii{} \\ \hline
+        Implementa y prueba el circuito l\'ogico final  & \labiii{} \\ \hline
+
+        \multicolumn{5}{|l|}{\textbf{INFORME DE TRABAJO DE EQUIPO}} \\ \hline
+
+        Presenta el informe puntualemnte de acuerdo a lo establecido & \informe{} \\ \hline
+
+        \multicolumn{5}{|l|}{\textbf{ACTITUDES}} \\ \hline
+        Participa con entusiamos y seguridad (Puntualidad, intervenciones, \'orden, limpieza y redacci\'on.) Culimna el laboratorio en el tiempo previsto. & \actitudes{} \\ \hline
+
+        \textbf{PUNTAJE TOTAL} & \multicolumn{4}{c|}{12} \\ \hline
+
+        Comentario al alumno & \multicolumn{4}{m{0.48\textwidth}|}{\comments} \\ \hline  
+
+        \multicolumn{5}{l}{\textbf{Descripci\'on de la evaluaci\'on}} \\ \hline
+
+        Excelente       & \multicolumn{4}{m{0.48\textwidth}|}{Completo entendimiento y realizaci\'on de la actividad, cumpliendo todos los requerimientos} \\ \hline
+        Bueno           & \multicolumn{4}{m{0.48\textwidth}|}{Entiende y realiza la actividad cumpliendo la mayoria de los requerimientos} \\ \hline
+        Requiere Mejora & \multicolumn{4}{m{0.48\textwidth}|}{Bajo entendimiento de la actividad cumpliendo pocos requerimientos} \\ \hline
+        No aceptable    & \multicolumn{4}{m{0.48\textwidth}|}{No demuestra entendimiento de la actividad} \\ \hline
+
+    \end{tabular}
+    \end{center}
+\end{table}
+
+\end{document}
