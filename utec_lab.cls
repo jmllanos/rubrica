@@ -196,62 +196,82 @@
 \newcommand{\makerubrica}{
 \newpage
 \begin{table}[!ht]
-    \begin{tabular}{|m{0.2\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.2\textwidth}|m{0.15\textwidth}|} 
+    \begin{tabular}{|m{0.22\textwidth} |*{3}{m{0.1\textwidth}|} m{0.2\textwidth}|m{0.15\textwidth}|} 
         \hline 
-         \logo               & \multicolumn{5}{l|}{Rubrica de Evaluaci\'on} \\ \hline 
+         \logo               & \multicolumn{5}{c|}{\bfseries R\'ubrica de Evaluaci\'on} \\ \hline 
         \textbf{Competencia} & \multicolumn{5}{p{0.8\textwidth}|}{\competencias}  \\ \hline
         
-        \textbf{Curso}       & \multicolumn{3}{l|}{\cursoname{}} & Ciclo & 4 \\ \hline
+        \textbf{Curso}       & \multicolumn{3}{l|}{\cursoname{}} 
+                             & Ciclo & 4 \\ \hline
         
-        \textbf{Actividad}   &\multicolumn{3}{p{0.35\textwidth}|}{\title} & Sesi\'on & \laboratorynumber \\ \hline
+        \textbf{Actividad}   &\multicolumn{3}{p{0.35\textwidth}|}{\title} 
+                             & Sesi\'on & \laboratorynumber \\ \hline
       
-        \textbf{Nombre y apellido del Alumno} &\multicolumn{3}{c|}{\studentname{}} & Periodo & \term \\ \hline
+        \textbf{Nombre y apellido del Alumno} &\multicolumn{3}{c|}{\studentname{}} 
+                                              & Periodo 
+                                              & \term \\ \hline
         
-        \textbf{Secci\'on:} & \studentsecction{}  & Fecha & \labdate{} & Jefe de pr\'acticas  & \jefedepracticasname  \\ \hline 
-        \multicolumn{6}{l}{\textbf{Documentos de evaluaci\'on}} \\ \hline
-        Laboratorio & \textbf{X}  & Taller \textbar & Proyecto & & Otros\textbar\\ \hline 
+        \textbf{Secci\'on:} & \studentsecction{}  & Fecha & \labdate{} 
+                                                  & Jefe de pr\'acticas  
+                                                  & \jefedepracticasname  \\ \hline
+
     \end{tabular}
-\end{table}
- \begin{table}[ht!]
-     \begin{center}
-     \begin{tabular}{|m{0.55\textwidth}|m{0.11\textwidth}|m{0.08\textwidth}|m{0.1\textwidth}|m{0.11\textwidth}|}
+                                                
+    \begin{center}
+     \begin{tabular}{|*{4}{m{0.144\textwidth}|>{\bfseries}m{0.072\textwidth}|}}
+      
+      \multicolumn{8}{l}{\textbf{Documentos de evaluaci\'on}} \\ \hline
+      Laboratorio &\textbf{X} & Taller & &Proyecto &  &Otros& \\ \hline
+     \end{tabular}
+    \end{center}
+
+    \begin{center}
+     \begin{tabular}{|*{2}{m{0.27\textwidth}|} *{4}{m{0.1\textwidth}|}}
          \hline
          
-         Criterios de evaluaci\'on & \textbf{Excelente} &\textbf{Bueno} & \textbf{Requiere Mejora} &\textbf{No aceptable} \\ \hline
+         \multicolumn{2}{|m{0.5\textwidth}|}{\bfseries CRITERIOS DE EVALUACI\'ON} & \textbf{\small Excelente} 
+                                                                                  &\textbf{\small Bueno} 
+                                                                                  & \textbf{\small Requiere Mejora} 
+                                                                                  & {\bfseries \small No \par aceptable} \\ \hline
          
-         \multicolumn{5}{|l|}{\textbf{TEST DE ENTRADA}} \\ \hline
+         \multicolumn{6}{|l|}{\textbf{TEST DE ENTRADA}} \\ \hline
          
-         Grado de conocimiento del tema del laboratorio y del procedimiento & \test{}  \\ \hline
+         \multicolumn{2}{|m{0.54\textwidth}|}{Grado de conocimiento del tema del laboratorio y del procedimiento} & \test{}  \\ \hline
          
-         \multicolumn{5}{|l|}{\textbf{SESI\'ON DE LABORATORIO}} \\ \hline
+         \multicolumn{6}{|l|}{\textbf{SESI\'ON DE LABORATORIO}} \\ \hline
          
-         \criterioiname    & \puntajei{} \\ \hline
-         \criterioiiname   & \puntajeii{} \\ \hline
-         \criterioiiiname  & \puntajeiii{} \\ \hline
+         \multicolumn{2}{|m{0.54\textwidth}|}{\criterioiname}    & \puntajei{} \\ \hline
+         \multicolumn{2}{|m{0.54\textwidth}|}{\criterioiiname}   & \puntajeii{} \\ \hline
+         \multicolumn{2}{|m{0.54\textwidth}|}{\criterioiiiname}  & \puntajeiii{} \\ \hline
  
-         \multicolumn{5}{|l|}{\textbf{INFORME DE TRABAJO DE EQUIPO}} \\ \hline
+         \multicolumn{6}{|l|}{\textbf{INFORME DE TRABAJO DE EQUIPO}} \\ \hline
  
-         Presenta el informe puntualemnte de acuerdo a lo establecido & \informe{}\\ \hline
+         \multicolumn{2}{|m{0.54\textwidth}|}{Presenta el informe puntualemnte de acuerdo a lo establecido} 
+                                                                                  & \informe{}\\ \hline
  
-         \multicolumn{5}{|l|}{\textbf{ACTITUDES}} \\ \hline
-         Participa con entusiamos y seguridad (Puntualidad, intervenciones, \'orden, limpieza y redacci\'on.) Culimna el laboratorio en el tiempo previsto. & \actitud{}  \\ \hline
+         \multicolumn{6}{|l|}{\textbf{ACTITUDES}} \\ \hline
+         \multicolumn{2}{|m{0.54\textwidth}|}{
+                                Participa con entusiamos y seguridad (Puntualidad, intervenciones, \'orden, limpieza y redacci\'on.) 
+                                Culimna el laboratorio en el tiempo previsto.} & \actitud{}  \\ \hline
  
-         \textbf{PUNTAJE TOTAL} & \multicolumn{4}{c|}{\total{}} \\ \hline
+         \multicolumn{2}{|l|}{\textbf{PUNTAJE TOTAL}} & \multicolumn{4}{c|}{\total{}} \\ \hline
  
-         Comentario al alumno & \multicolumn{4}{m{0.48\textwidth}|}{\comments{}} \\ \hline  
+         Comentario al alumno & \multicolumn{5}{m{0.74\textwidth}|}{\comments{}} \\ \hline
       \end{tabular}
      \end{center}
- \end{table}
- \textbf{Descripci\'on de la evaluaci\'on} 
- \begin{table}[ht!]
+
+     \small
      \begin{center}
      \begin{tabular}{|m{0.12\textwidth}|m{0.90\textwidth}|}
-         \hline
+         \multicolumn{2}{l}{\textbf{Descripci\'on de la evaluaci\'on}}  \\ \hline
+         
          \textbf{Excelente}       & Completo entendimiento y realizaci\'on de la actividad, cumpliendo todos los requerimientos \\ \hline
          \textbf{Bueno}           & Entiende y realiza la actividad cumpliendo la mayoria de los requerimientos \\ \hline
          \textbf{Requiere Mejora} & Bajo entendimiento de la actividad cumpliendo pocos requerimientos \\ \hline
-         \textbf{No aceptable}    & No demuestra entendimiento de la actividad \\ \hline
-     \end{tabular}
+         {\bfseries No \par aceptable}    & No demuestra entendimiento de la actividad \\ \hline
+        
+    \end{tabular}
      \end{center}
  \end{table}
+
 }

@@ -1,103 +1,151 @@
 import os
 
+criterios={
+            "test":(4,3,2,1,0),
+            "criterio1":(4,3,2,1,0),
+            "criterio2":(4,3,2,1,0),
+            "criterio3":(4,3,2,1,0),
+            "informe":(2,1,0),
+            "actitud":(2,1,0)
+            }
+
+
+laboratories=("Laboratorio1",
+              "Laboratorio2",
+              "Laboratorio3",
+              "Laboratorio4",
+              "Laboratorio5",
+              "Laboratorio6",
+              "Laboratorio7",
+                   )
+
+secciones=("1.01",
+           "1.02",
+           "2.02")
+
+
 Lab1={"numero":1,
-      "titulo":"Compuertas Lógicas en VHDL"}
+      "titulo":"Compuertas Lógicas en VHDL",
+      "competencia":"Formular, sintetizar e implementar compuertas lógicas básicas usando Vivado y vhdl",
+      "criterioi":"Implementa las compuertas lógicas AND, OR, NOT y sus equivalentes con NANDs usando VHDL",
+      "criterioii":"Implementa un circuito digital y su versión equivalente con NANDs usando VHDL",
+      "criterioiii":"Implementa la función lógica final"}
 
 Lab2={"numero":2,
-      "titulo":"Circuitos combinatorios en VHDL"}
+      "titulo":"Circuitos combinatorios en VHDL",
+      "competencia":"Formular, sintetizar e implementar circuitos combinacionales usando Vivado y VHDL",
+      "criterioi":"Implementar el sumador completo de 1 bit",
+      "criterioii":"Implementar el sumador completo de 4 bits usando arquitectura de flujo de datos",
+      "criterioiii":"Implementar el sumador completo de 4 bits usando arquitectura estructurada"}
 
 Lab3={"numero":3,
-      "titulo":"Comparador, MUX/DEMUX, CODE/DECODE"}
+      "titulo":"Comparador, Multiplexor y Decodificador",
+      "competencia":"Formular, sintetizar e implementar circuitos combinacionales usando Vivado y VHDL",
+      "criterioi":"Realiza el diseño de los circuitos en VHDL usando Vivado",
+      "criterioii":"Realiza la simulación de los circuitos diseñados en VHDL usando Vivado",
+      "criterioiii":"Implementar de los diseños en la tarjeta Basys3"}
 
 Lab4={"numero":4,
-      "titulo":"ALU"}
+      "titulo":"Unidad Aritmética Lógica (ALU)",
+      "competencia":"Formular, sintetizar e implementar circuitos combinacionales usando Vivado y VHDL",
+      "criterioi":"IRealiza el diseño de los circuitos en VHDL usando Vivado",
+      "criterioii":"Realiza la simulación de los circuitos diseñados en VHDL usando Vivado",
+      "criterioiii":"Realizar el análisis de recursos utilizados (LUTs)"}
 
 Lab5={"numero":5,
-      "titulo":"Circuitos Secuenciales"}
- 
+      "titulo":"Circuitos Secuenciales",
+      "competencia":"Formular, sintetizar e implementar circuitos secuenciales usando Vivado y VHDL",
+      "criterioi":"Realiza el dise\~no de los circuitos secuenciales en VHDL usando Vivado",
+      "criterioii":"Realiza la simulaci\'on de los circuitos secuenciales en VHDL usando Vivado",
+      "criterioiii":"Realizar el análisis de recursos utilizados (LUTs)"}
+
 Lab6={"numero":6,
-      "titulo":"Maquinas de estado"}
+      "titulo":"Maquinas de estado",
+      "competencia":"Formular, sintetizar e implementar m\'aquinas de estados usando Vivado y VHDL",
+      "criterioi":"Realiza el dise\~no de m\'aquinas de estados en VHDL usando Vivado",
+      "criterioii":"Realiza la simulaci\'on de las m\'aquinas de estados en VHDL usando Vivado",
+      "criterioiii":"Realizar el análisis de recursos utilizados (LUTs) y FlipFlops"}
 
 Lab7={"numero":7,
-      "titulo":"Memorias"}
+      "titulo":"Memorias",
+      "competencia":"Formular, sintetizar e implementar compuertas lógicas básicas usando Vivado y vhdl",
+      "criterioi":"Implementa las compuertas l\'ogicas AND, OR, NOT y sus equivalentes con NANDs usando VHDL",
+      "criterioii":"Implementa un circuito digital y su versi\'on equivalente con NANDs usando VHDL",
+      "criterioiii":"Implementa la función lógica final"}
 
 def writeRubrica(data):
 
-    name=data["name"]
-    seccion=data["section"]
-    test=data["test"]
-    exper1=data["experiment1"]
-    exper2=data["experiment2"]
-    exper3=data["experiment3"]
-    informe=data["informe"]
-    actitud=data["actitud"]
-    comments=data["comments"]
-    total=data["total"]
-    laboratorio=data["laboratorio"]
 
-    print(laboratorio)
-    if laboratorio=="Laboratorio_1":
+    if data["laboratorio"]==laboratories[0]:
         lab=Lab1
-    if laboratorio=="Laboratorio_2":
+    if data["laboratorio"]==laboratories[1]:
         lab=Lab2
-    if laboratorio=="Laboratorio_3":
+    if data["laboratorio"]==laboratories[2]:
         lab=Lab3
-    if laboratorio=="Laboratorio_4":
+    if data["laboratorio"]==laboratories[3]:
         lab=Lab4
-    if laboratorio=="Laboratorio_5":
+    if data["laboratorio"]==laboratories[4]:
         lab=Lab5
-    if laboratorio=="Laboratorio_6":
+    if data["laboratorio"]==laboratories[5]:
         lab=Lab6
-    if laboratorio=="Laboratorio_7":
+    if data["laboratorio"]==laboratories[6]:
         lab=Lab7
 
 
 
     datos=open("datos.tex","w")
 
-    l1="\\alumnonombre{{{}}}".format(name)
-    l2="\\alumnoseccion{{{}}}".format(seccion)
-    l3="\\puntajetest{{{}}}".format(test)
-    l4="\\puntajecriterioi{{{}}}".format(exper1)
-    l5="\\puntajecriterioii{{{}}}".format(exper2)
-    l6="\\puntajecriterioiii{{{}}}".format(exper3)
-    l7="\\puntajeinforme{{{}}}".format(informe)
-    l8="\\puntajeactitud{{{}}}".format(actitud)
-    l9="\\puntajetotal{{{}}}".format(total)
-    l10="\\comentarios{{{}}}".format(comments)
+    lines=[]
+    lines.append("\\alumnonombre{{{}}}".format(data["name"]))
+    lines.append("\\alumnoseccion{{{}}}".format(data["section"]))
 
-    l11="\\numero{{{}}}".format(lab["numero"])
-    l12="\\titulo{{{}}}".format(lab["titulo"])
+    lines.append("\\puntajetest{{{}}}".format(data["test"]))
+    lines.append("\\puntajecriterioi{{{}}}".format(data["criterio1"]))
+    lines.append("\\puntajecriterioii{{{}}}".format(data["criterio2"]))
+    lines.append("\\puntajecriterioiii{{{}}}".format(data["criterio3"]))
+    lines.append("\\puntajeinforme{{{}}}".format(data["informe"]))
+    lines.append("\\puntajeactitud{{{}}}".format(data["actitud"]))
 
+    lines.append("\\puntajetotal{{{}}}".format(data["total"]))
+    lines.append("\\comentarios{{{}}}".format(data["comments"]))
 
-    datos.writelines(l1)
-    datos.write("\n")
-    datos.writelines(l2)
-    datos.write("\n")
-    datos.writelines(l3)
-    datos.write("\n")
-    datos.writelines(l4)
-    datos.write("\n")
-    datos.writelines(l5)
-    datos.write("\n")
-    datos.writelines(l6)
-    datos.write("\n")
-    datos.writelines(l7)
-    datos.write("\n")
-    datos.writelines(l8)
-    datos.write("\n")
-    datos.writelines(l9)
-    datos.write("\n")
-    datos.writelines(l10)
-    datos.write("\n")
-    datos.writelines(l11)
-    datos.write("\n")
-    datos.writelines(l12)
-    datos.write("\n")
+    lines.append("\\numero{{{}}}".format(lab["numero"]))
+    lines.append("\\titulo{{{}}}".format(lab["titulo"]))
+    lines.append("\\competencia{{{}}}".format(lab["competencia"]))
+    lines.append("\\criterioi{{{}}}".format(lab["criterioi"]))
+    lines.append("\\criterioii{{{}}}".format(lab["criterioii"]))
+    lines.append("\\criterioiii{{{}}}".format(lab["criterioiii"]))
+
+    for line in lines:
+        datos.write(line)
+        datos.write("\n")
 
     datos.close()
 
-    cmd="pdflatex --jobname={}_sec{}_\"{}\" main.tex".format(laboratorio,seccion,name)
+
+    #cmd="pdflatex --jobname={}_sec{}_\"{}\" main.tex".format(data["laboratorio"],data["section"],data["name"][1:-2])
+    #os.system(cmd)
+
+    cmd="pdflatex --jobname=rubrica main.tex"
+    os.system(cmd)
+
+    if data["tipo"]=="Mejor":
+        tipo=1
+    elif data["tipo"]=="Peor":
+        tipo=2
+    elif data["tipo"]=="Promedio":
+        tipo=3
+
+    seccion=data["section"]
+    lab=data["laboratorio"]
+
+    fileName="2020_1_Circuitos_Digitales_{}_{}_{}".format(seccion,lab,tipo)
+
+    cmd="pdfunite \"{}\" rubrica.pdf {}.pdf".format(data["filepath"],fileName)
+
+    os.system(cmd)
+
+    cmd="mv {}.pdf evidencias/{}".format(fileName,seccion)
     os.system(cmd)
 
     cmd="rm *.aux"
@@ -106,7 +154,7 @@ def writeRubrica(data):
     cmd="rm *.log"
     os.system(cmd)
 
-    cmd="mv *.pdf Laboratorio/sec{}/{}".format(seccion,laboratorio)
-    print(cmd)
-    os.system(cmd)
+    #cmd="mv *.pdf Laboratorio/sec{}/{}".format(seccion,laboratorio)
+    #print(cmd)
+   # os.system(cmd)
 
